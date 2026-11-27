@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test'
+test.use({ storageState: 'Playwright/user.json' });
 
 test('Logout from the website', async ({ page }) => {
 

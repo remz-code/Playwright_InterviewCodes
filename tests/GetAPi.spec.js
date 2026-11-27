@@ -9,7 +9,7 @@ test('Get API Request', async({request})=>
 
     const responseBody= await response.json();
 
-    expect(responseBody.UserId).toBe(1);
+    expect(responseBody.userId).toBe(1);
     expect(responseBody.title).toContain('sunt aut facere repellat');
     expect(responseBody.id).toBeTruthy();
 })
