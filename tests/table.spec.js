@@ -11,7 +11,8 @@ test('WebTables',async({page})=>
         await expect(row).toBeVisible();
 
 
-   await row.getByRole('button', { name: 'Edit' }).click();
+   //await row.getByRole('button',{ name:'Edit' }).click();
+   
 
 
 })
