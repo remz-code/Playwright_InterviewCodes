@@ -29,8 +29,20 @@ test('Invalid login',{tag:['@regression','@login']},async({page})=>
     await page.getByRole('button', { name: 'Login' })
         .click();
 
-    await expect(
-        page.locator('[data-test="error"]')
-    ).toBeVisible();
+    await expect(page.locator('[data-test="error"]')).toBeVisible();
 
+});
+
+test('Lockout User',async({page})=>
+{
+    await page.getByPlaceholder('Username')
+        .fill('locked_out_user');
+
+    await page.getByPlaceholder('Password')
+        .fill('secret_sauce');
+
+    await page.getByRole('button', { name: 'Login' })
+        .click();
+
+        await expect(page.locator('[data-test="error"]')).toBeVisible();
 });

@@ -1,10 +1,12 @@
 import {test,expect} from '@playwright/test'
 
-test('Multple window',async({page})=>
+test('Multple window',async({browser})=>
 {
     const context = await browser.newContext({
         ignoreHTTPSErrors: true
     });
+
+    const page=await context.newPage();
     await page.goto('https://the-internet.herokuapp.com/windows');
     const[newPage]=await Promise.all([
         page.context().waitForEvent('page'),
